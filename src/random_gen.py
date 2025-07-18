@@ -1,10 +1,31 @@
+"""
+random_gen.py
+
+This module defines the RandomGen class, which generates random numbers based on
+a user-defined discrete probability distribution.
+"""
+
 import random
 import bisect
 from math import isclose
+from itertools import accumulate
 
 
-class RandomGen:
-    def __init__(self, random_nums, probabilities):
+class RandomGen:  # pylint: disable=too-few-public-methods
+    """
+    A generator that returns numbers from a predefined list based on their associated probabilities.
+    """
+    def __init__(self, random_nums: list[int], probabilities: list[float]):
+        """
+        Initialize the generator.
+
+        Args:
+            random_nums (List[int]): List of numbers to choose from.
+            probabilities (List[float]): Corresponding probabilities for each number.
+
+        Raises:
+            ValueError: If input validation fails.
+        """
         if not isinstance(random_nums, list) or len(random_nums) == 0:
             raise ValueError("random_nums must be a non-empty list")
         if not isinstance(probabilities, list) or len(probabilities) == 0:
@@ -16,18 +37,15 @@ class RandomGen:
 
         self._random_nums = random_nums
         self._probabilities = probabilities
-        self._cumulative_probs = self.compute_cumulative_probabilities(self._probabilities)
+        self._cumulative_probs = list(accumulate(self._probabilities))
 
-    @staticmethod
-    def compute_cumulative_probabilities(probabilities):
-        cumulative_probs = []
-        total = 0.0
-        for p in probabilities:
-            total += p
-            cumulative_probs.append(total)
-        return cumulative_probs
+    def next_num(self) -> int:
+        """
+        Returns a random number based on initialized probabilities.
 
-    def next_num(self):
+        Returns:
+            int: A randomly chosen number from 'random_nums'.
+        """
         r = random.random()  # will be in the range [0.0, 1.0)
         index = bisect.bisect_left(self._cumulative_probs, r)
         return self._random_nums[index]

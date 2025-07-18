@@ -1,4 +1,4 @@
-name: notinuse_nextNum CI
+name: nextNum CI
 
 on:
   push:
