@@ -17,7 +17,7 @@ class RandomGen:  # pylint: disable=too-few-public-methods
     """
     def __init__(self, random_nums: list[int], probabilities: list[float]):
         """
-        Initialize the generator.
+        Initialise the generator.
 
         Args:
             random_nums (List[int]): List of numbers to choose from.
@@ -41,7 +41,7 @@ class RandomGen:  # pylint: disable=too-few-public-methods
 
     def next_num(self) -> int:
         """
-        Returns a random number based on initialized probabilities.
+        Returns a random number based on initialised probabilities.
 
         Returns:
             int: A randomly chosen number from 'random_nums'.
