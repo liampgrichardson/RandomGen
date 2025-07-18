@@ -1,4 +1,6 @@
-"""Unit tests for the RandomGen class."""
+"""
+Unit tests for the RandomGen class.
+"""
 
 import unittest
 from collections import Counter
