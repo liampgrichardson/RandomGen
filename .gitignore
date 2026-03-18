@@ -3,3 +3,15 @@
 
 # python venv files
 venv
+.venv
+
+# coverage files
+.coverage
+htmlcov/
+
+# pytest cache
+.pytest_cache/
+
+# python bytecode files
+__pycache__/
+*.pyc
