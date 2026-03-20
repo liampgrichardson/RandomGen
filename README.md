@@ -1,5 +1,6 @@
-# nextNum
-repo for nextNum
+# What is RandomGen?
+
+`RandomGen` is a Python class that generates random numbers from a user-defined list, where each number is chosen according to a specified discrete probability distribution. You provide a list of numbers and a corresponding list of probabilities (which must sum to 1), and `RandomGen` will return numbers based on those probabilities. This is useful for simulations, probabilistic algorithms, or any scenario where you need to sample values according to custom likelihoods.
 
 Prerequisites:
 Requires python 3.10
