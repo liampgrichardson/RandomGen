@@ -8,7 +8,7 @@ How to use:
 - create venv or .venv
 - Clone this repo and run main.py for a working example implementation of nextNum
 
-How to run tests:
+How to run unit tests:
 - create venv or .venv
 - pip install -r dev-requirements.txt
 - python -m unittest discover
@@ -16,7 +16,7 @@ How to run tests:
 How to run coverage and view report then html:
 - create venv or .venv
 - pip install -r dev-requirements.txt
-- coverage run python -m unittest discover
+- coverage run -m unittest discover
 - coverage report
 - coverage html
 - go to finder and open htmlcov/index.html in browser
