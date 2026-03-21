@@ -7,7 +7,7 @@ Requires python 3.10
 
 How to use:
 - create venv or .venv
-- Clone this repo and run main.py for a working example implementation of nextNum
+- Clone this repo and run main.py for a working example implementation of `next_num`
 
 How to run unit tests:
 - create venv or .venv
